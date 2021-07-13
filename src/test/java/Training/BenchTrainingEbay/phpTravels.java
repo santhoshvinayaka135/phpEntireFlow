@@ -11,7 +11,7 @@ public class phpTravels extends TestBase {
 	@Test
 	public void One() throws InterruptedException, IOException {
 
-		homePage hp = new homePage();
+		homePage hp = new homePage(DriverManager.getWebDriver());
 		RegistrationPage rp = hp.SignUpProcess();
 		afterLoginPage alp = rp.LoginProcess();
 		alp.VerifyProcess();

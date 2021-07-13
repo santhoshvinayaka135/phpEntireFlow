@@ -38,7 +38,7 @@ public class RegistrationPage {
 	@FindBy(name = "confirmpassword")
 	WebElement confirm;
 
-	@FindBy(xpath = "//button[contains(text(),'Sign Up')]")
+	@FindBy(xpath = "//button[contains(text(),'sssSign Up')]")
 	WebElement button;
 
 	public WebElement firstName() {
