@@ -6,14 +6,13 @@
   </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="Training.BenchTrainingEbay.ebay">
+      <class name="Training.BenchTrainingEbay.phpTravels">
         <methods>
+          <include name="before"/>
+          <include name="after"/>
           <include name="One"/>
-          <include name="afterMethod"/>
-          <include name="beforeMethod"/>
-          <include name="afterTest"/>
         </methods>
-      </class> <!-- Training.BenchTrainingEbay.ebay -->
+      </class> <!-- Training.BenchTrainingEbay.phpTravels -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

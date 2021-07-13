@@ -1,16 +1,12 @@
 package Training.BenchTrainingEbay;
 
-import java.io.IOException;
-
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
-
 import pageObjects.ExtentReporterNG;
 import pageObjects.base;
 
@@ -34,13 +30,10 @@ public class Listeners extends base implements ITestListener {
 	@Override
 	public void onTestFailure(ITestResult result) {
 		// TODO Auto-generated method stub
-		WebDriver driver = null;
 		test.fail(result.getThrowable());
 		String testMethodName = result.getMethod().getMethodName();
 		try {
-			driver = (WebDriver) result.getTestClass().getRealClass().getDeclaredField("driver")
-					.get(result.getInstance());
-			test.addScreenCaptureFromPath(getScreenShotPath(testMethodName, driver), result.getMethod().getMethodName());
+			test.addScreenCaptureFromPath(getScreenShotPath(testMethodName, DriverManager.getWebDriver()), result.getMethod().getMethodName());
 
 		} catch (Exception e) {
 			e.printStackTrace();
